@@ -64,17 +64,21 @@ function pfStudio.editor:DebugCode()
   DEFAULT_CHAT_FRAME = pfStudio.debug.scroll
 
   message = function (msg)
-    pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffcccc33INFO  |cffffff55"..msg)
+    pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffcccc33INFO  |cffffffff"..msg)
   end
 
   ScriptErrors:SetScript("OnShow", function(msg)
-    pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffcc3333ERROR |cffff5555"..ScriptErrors_Message:GetText())
+    pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffcc3333ERROR |cffffffff"..ScriptErrors_Message:GetText())
     ScriptErrors:Hide()
   end)
 
   -- run code
   local activeTab = pfStudio.editor.tabs[pfStudio.editor:GetID()]
+  local title = pfStudio.editor:GetTitle(pfStudio.editor:GetID())
+  pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffccccccSTART |cffaaaaaa'" .. title .. "'")
   RunScript(pfStudio_saved.code[activeTab:GetID()])
+  pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffccccccDONE")
+
   if not pfStudio.debug:IsShown() then
     pfStudio.debug:Show()
     pfStudio.debug.title:Show()
