@@ -55,8 +55,35 @@ function pfStudio.editor:RunCode()
 end
 
 function pfStudio.editor:DebugCode()
+  -- save old environment
+  local old_message = message
+  local old_error = ScriptErrors:GetScript("OnShow")
+  local old_default = DEFAULT_CHAT_FRAME
+
+  -- switch to debug
+  DEFAULT_CHAT_FRAME = pfStudio.debug.scroll
+
+  message = function (msg)
+    pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffcccc33INFO  |cffffff55"..msg)
+  end
+
+  ScriptErrors:SetScript("OnShow", function(msg)
+    pfStudio.debug.scroll:AddMessage("|cff555555" .. date("%H:%M:%S") .. "|r " .. "|cffcc3333ERROR |cffff5555"..ScriptErrors_Message:GetText())
+    ScriptErrors:Hide()
+  end)
+
+  -- run code
   local activeTab = pfStudio.editor.tabs[pfStudio.editor:GetID()]
   RunScript(pfStudio_saved.code[activeTab:GetID()])
+  if not pfStudio.debug:IsShown() then
+    pfStudio.debug:Show()
+    pfStudio.debug.title:Show()
+  end
+
+  -- restore old environment
+  message = old_message
+  DEFAULT_CHAT_FRAME = old_default
+  ScriptErrors:SetScript("OnShow", old_error)
 end
 
 function pfStudio.editor:GetTitle(id)

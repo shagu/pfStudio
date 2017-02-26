@@ -57,3 +57,13 @@ pfStudio.toolbar["events"]:SetScript("OnClick", function()
     pfStudio.events.title:Show()
   end
 end)
+
+pfStudio.toolbar["info"]:SetScript("OnClick", function()
+  if pfStudio.debug.title:IsShown() then
+    pfStudio.debug:Hide()
+    pfStudio.debug.title:Hide()
+  else
+    pfStudio.debug:Show()
+    pfStudio.debug.title:Show()
+  end
+end)

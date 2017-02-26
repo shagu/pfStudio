@@ -13,3 +13,4 @@ pfStudio.lua
 modules\toolbar.lua
 modules\editor.lua
 modules\events.lua
+modules\debug.lua
