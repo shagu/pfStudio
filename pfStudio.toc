@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: |cff33ffccpf|cffffffffStudio |cffff5555(BETA)
+## Author: Shagu
+## Notes: An Ingame-IDE for World of Warcraft
+## Version: 0.1
+## SavedVariables: pfStudio_config, pfStudio_saved
+
+# api
+api\windget.lua
+
+# main
+pfStudio.lua
+modules\toolbar.lua
+modules\editor.lua
+modules\events.lua
