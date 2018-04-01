@@ -1,18 +1,20 @@
 # pfStudio
 
-An Ingame-IDE for World of Warcraft (Vanilla 1.12.1) featuring an event viewer and some of other stuff. This project is in early development state, don't expect high quality yet.
+An experiment to provide an ingame-IDE for World of Warcraft (Vanilla 1.12.1) featuring an event viewer and some of other stuff. This project is in early development state, don't expect high quality yet.
 
-## Installation (BETA)
-1. Download **[Latest](https://github.com/shagu/pfStudio/archive/master.zip)**
-2. Unpack the Zip, rename the folder "pfStudio-master" to "pfStudio".
-3. Copy "pfStudio" to Wow-Directory\Interface\AddOns
-4. Restart Wow
+![preview](https://i.imgur.com/lMblwnZ.png)
+
+## Installation
+1. Download **[Latest Version](https://github.com/shagu/pfStudio/archive/master.zip)**
+2. Unpack the Zip file
+3. Rename the folder "pfStudio-master" to "pfStudio"
+4. Copy "pfStudio" into Wow-Directory\Interface\AddOns
+5. Restart Wow
 
 ## Commands
 
 * **/studio**  to open the Toolbar (Main Window)
 * **/rl**  to reload the UI
-
 
 ## Window Management
 * Alt + Left-Mousebutton to move windows
