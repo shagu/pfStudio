@@ -2,7 +2,7 @@
 
 An experiment to provide an ingame-IDE for World of Warcraft (Vanilla 1.12.1) featuring an event viewer and some of other stuff. This project is in early development state, don't expect high quality yet.
 
-![preview](https://i.imgur.com/lMblwnZ.png)
+![preview](https://raw.githubusercontent.com/shagu/ShaguAddons/master/_img/pfStudio/events.png)
 
 ## Installation
 1. Download **[Latest Version](https://github.com/shagu/pfStudio/archive/master.zip)**
