@@ -13,6 +13,11 @@ An experiment to provide an ingame-IDE for World of Warcraft (Vanilla 1.12.1) fe
 
 ## Commands
 
+`/studiopause` - Pauses/Resumes events
+`/studioregister EVENT_NAME` - register specific event
+`/studiounregister EVENT_NAME` - unregister specific event
+`/studiounregister all` - unregister all events
+
 * **/studio**  to open the Toolbar (Main Window)
 * **/rl**  to reload the UI
 
