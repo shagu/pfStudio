@@ -20,6 +20,40 @@ function SlashCmdList.RELOAD(msg, editbox)
   ReloadUI()
 end
 
+SLASH_STUDIO_PAUSE1 = '/studiopause'
+function SlashCmdList.STUDIO_PAUSE(msg, editbox)
+  if pfStudio.paused then
+    pfStudio.paused = nil
+    pfStudio.events:RegisterAllEvents()
+    pfStudio.events.input:AddMessage("|cff33ffccEvents resumed.|r\n")
+  else
+    pfStudio.paused = true
+    pfStudio.events:UnregisterAllEvents()
+    pfStudio.events.input:AddMessage("|cff33ffccEvents paused.|r\n")
+  end
+end
+
+SLASH_STUDIO_REGISTER1 = '/studioregister'
+function SlashCmdList.STUDIO_REGISTER(msg, editbox)
+  -- register event 'msg'
+  pfStudio.events:RegisterEvent(msg)
+  pfStudio.events.input:AddMessage("|cff33ffccEvent " .. msg .. " registered.|r\n")
+end
+
+SLASH_STUDIO_UNREGISTER1 = '/studiounregister'
+function SlashCmdList.STUDIO_UNREGISTER(msg, editbox)
+  if(msg == "all") then
+    -- unregister all events
+    pfStudio.events:UnregisterAllEvents()
+    pfStudio.events.input:AddMessage("|cff33ffccAll events unregistered.|r\n")
+    return
+  end
+
+  -- unregister event 'msg'
+  pfStudio.events:UnregisterEvent(msg)
+  pfStudio.events.input:AddMessage("|cff33ffccEvent " .. msg .. " unregistered.|r\n")
+end
+
 -- functions
 function pfStudio.strsplit(delimiter, subject)
   local delimiter, fields = delimiter or ":", {}
